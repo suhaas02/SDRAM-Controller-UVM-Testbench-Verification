@@ -1,0 +1,2 @@
+var g_data = {"15":{"pr":"/sdram_pkg","ty":2,"dui":2,"dun":"work.sdram_pkg","cvgs":[{"h":["\\/sdram_pkg::src_monitor::cg ",2,1,20,16],"cov":[6,0,0.00],"opts":{"goal":"100","per_instance":"true"}},{"h":["/sdram_pkg/src_monitor/cg",1,1,16],"cov":[6,0,0.00],"opts":{"goal":"100","merge_instance":"auto(true)"}}]}};
+processCovergroupsData(g_data);

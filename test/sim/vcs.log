@@ -1,0 +1,1123 @@
+Command: vcs -l vcs.log -timescale=1ns/1ps -sverilog -ntb_opts uvm -debug_access+all \
+-full64 -kdb -lca -P /home/cad/eda/SYNOPSYS/VERDI_2022/verdi/T-2022.06-SP1/share/PLI/VCS/LINUX64/novas.tab \
+/home/cad/eda/SYNOPSYS/VERDI_2022/verdi/T-2022.06-SP1/share/PLI/VCS/LINUX64/pli.a \
+../rtl/bindfile.sv ../rtl/checker_file.sv ../rtl/sdram_controller.v ../rtl/sdram_if.sv \
+../rtl/sdram_model.v ../rtl/sdram_top.v +incdir+../tb +incdir+../test +incdir+../src_agent \
++incdir+../dst_agent ../test/sdram_pkg.sv ../tb/top.sv
+                         Chronologic VCS (TM)
+       Version T-2022.06-SP1_Full64 -- Mon Feb  2 16:56:07 2026
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Parsing design file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_version_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/snps_macros.svp'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_message_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_phase_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_object_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_printer_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_tlm_defines.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm_imps.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_tlm_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_sequence_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_callback_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_reg_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/macros/uvm_deprecated_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/directc/uvm_directc.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/directc/uvm_seed.vh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/directc/uvm_directc.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/dpi/uvm_hdl.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/dpi/uvm_svcmd_dpi.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/dpi/uvm_regex.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/dpi/uvm_dpi.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_version.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_object_globals.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_misc.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_object.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_pool.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_queue.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_factory.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_registry.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_spell_chkr.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_resource.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/deprecated/uvm_resource_converter.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_resource_specializations.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_resource_db.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_config_db.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_printer.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_comparer.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_packer.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_recorder.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_event_callback.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_event.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_barrier.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_callback.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_callback.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_report_catcher.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_report_server.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_report_handler.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_report_object.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_transaction.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_phase.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_domain.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_bottomup_phase.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_topdown_phase.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_task_phase.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_common_phases.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_runtime_phases.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_component.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_root.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_component.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_objection.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_heartbeat.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_globals.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_cmdline_processor.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm_ifs.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_sqr_ifs.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_port_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm_imps.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_imps.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_ports.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_exports.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_analysis_port.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm_fifo_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm_fifos.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm_req_rsp.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_sqr_connections.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm1/uvm_tlm.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_pair.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_policies.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_in_order_comparator.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_algorithmic_comparator.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_random_stimulus.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_subscriber.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_monitor.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_driver.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_push_driver.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_scoreboard.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_agent.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_env.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_test.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/comps/uvm_comps.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequence_item.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequencer_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequencer_analysis_fifo.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequencer_param_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequencer.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_push_sequencer.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequence_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequence.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequence_library.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_sequence_builtin.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/seq/uvm_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_defines.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_time.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_generic_payload.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_ifs.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_imps.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_ports.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_exports.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_sockets_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2_sockets.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_item.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_adapter.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_predictor.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_sequence.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_cbs.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_backdoor.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_field.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_vreg_field.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_indirect.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_fifo.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_file.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_mem_mam.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_vreg.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_mem.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_map.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_block.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_reg_hw_reset_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_reg_bit_bash_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_mem_walk_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_mem_access_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_reg_access_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_reg_mem_shared_access_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_reg_mem_built_in_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/snps_uvm_reg_bank.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/reg/uvm_reg_model.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/vcs_uvm_alt.sv'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_pkg.sv'.
+Parsing design file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/msglog.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_msglog_report_server.sv'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_vcs_recorder.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_vcs_record_interface.sv'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing design file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_recorder.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_pli_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_recorder.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_reg_map_recording.sv'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_message_catcher.svh'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_pli_base.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_message_catcher.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/./dpi/uvm_verdi_dpi.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_reg_recording.sv'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VERDI_2022/verdi/T-2022.06-SP1/share/PLI/VCS/include/verdi_trans_recorder_dpi.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_verdi_pli.svh'.
+Back to file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing design file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/verdi/uvm_custom_install_verdi_recorder.sv'
+Parsing design file '../rtl/bindfile.sv'
+Parsing design file '../rtl/checker_file.sv'
+Parsing design file '../rtl/sdram_controller.v'
+Parsing design file '../rtl/sdram_if.sv'
+Parsing design file '../rtl/sdram_model.v'
+Parsing design file '../rtl/sdram_top.v'
+Parsing design file '../test/sdram_pkg.sv'
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../tb/config_obj.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../tb/transaction.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../src_agent/src_seqs.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../dst_agent/dst_driver.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../dst_agent/dst_monitor.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../dst_agent/dst_sequencer.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../dst_agent/dst_agent.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../src_agent/src_driver.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../src_agent/src_monitor.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../src_agent/src_sequencer.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../src_agent/src_agent.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../tb/scoreboard.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../tb/virtual_sequencer.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../tb/virtual_sequence.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../tb/environment.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing included file '../test/test.sv'.
+Back to file '../test/sdram_pkg.sv'.
+Parsing design file '../tb/top.sv'
+Parsing included file '/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/uvm_macros.svh'.
+Back to file '../tb/top.sv'.
+Top Level Modules:
+       uvm_custom_install_recording
+       uvm_custom_install_verdi_recording
+       top
+TimeScale is 1 ns / 1 ps
+Starting vcs inline pass...
+
+12 modules and 0 UDP read.
+recompiling module uvm_custom_install_verdi_recording
+recompiling module sdram_top
+Both modules done.
+	However, due to incremental compilation, only 2 modules need to be compiled. 
+make[1]: Entering directory '/home1/BPRN08/VegiJ/SDRAM/sim/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/linux64/lib -L/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _2805138_archive_1.so \
+_prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o \
+rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs \
+/home/cad/eda/SYNOPSYS/VERDI_2022/verdi/T-2022.06-SP1/share/PLI/VCS/LINUX64/pli.a \
+-lvcsnew -lsimprofile -lreader_common /home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/linux64/lib/libBA.a \
+-luclinative /home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/linux64/lib/vcs_tls.o  \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
+_vcs_pli_stub_.o   /home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/linux64/lib/vcs_save_restore_new.o \
+/home/cad/eda/SYNOPSYS/VERDI_2022/verdi/T-2022.06-SP1/share/PLI/VCS/LINUX64/pli.a \
+-ldl -lm  -lc -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory '/home1/BPRN08/VegiJ/SDRAM/sim/csrc'
+CPU time: 14.773 seconds to compile + .624 seconds to elab + 1.163 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+Command: /home1/BPRN08/VegiJ/SDRAM/sim/./simv -a vcs.log +fsdbfile+wave2.fsdb -cm_dir ./mem_cov2 +ntb_random_seed_automatic +UVM_TESTNAME=write_read_test
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06-SP1_Full64; Runtime version T-2022.06-SP1_Full64;  Feb  2 16:56 2026
+NOTE: automatic random seed used: 3024578535
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test write_read_test...
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_T-2022.06-SP1, Linux x86_64/64bit, 08/28/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'wave2.fsdb'
+*Verdi* : Begin traversing the scope (top), layer (0).
+*Verdi* : End of traversing.
+UVM_INFO ../src_agent/src_agent.sv(29) @ 0: uvm_test_top.envh.sagh [src_agent] Driver, seqr connection successful
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               write_read_test         -     @462 
+  envh                     environment             -     @470 
+    dagh                   dst_agent               -     @496 
+      dmonh                dst_monitor             -     @728 
+        put_port           uvm_blocking_put_port   -     @736 
+    sagh                   src_agent               -     @488 
+      sdrvh                src_driver              -     @747 
+        rsp_port           uvm_analysis_port       -     @764 
+        seq_item_port      uvm_seq_item_pull_port  -     @755 
+      smonh                src_monitor             -     @896 
+        put_port           uvm_blocking_put_port   -     @904 
+      sseqrh               src_sequencer           -     @773 
+        rsp_export         uvm_analysis_export     -     @781 
+        seq_item_export    uvm_seq_item_pull_imp   -     @887 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    sbh                    scoreboard              -     @627 
+      dfifoh               uvm_tlm_fifo #(T)       -     @679 
+        get_ap             uvm_analysis_port       -     @714 
+        get_peek_export    uvm_get_peek_imp        -     @696 
+        put_ap             uvm_analysis_port       -     @705 
+        put_export         uvm_put_imp             -     @687 
+      sfifoh               uvm_tlm_fifo #(T)       -     @635 
+        get_ap             uvm_analysis_port       -     @670 
+        get_peek_export    uvm_get_peek_imp        -     @652 
+        put_ap             uvm_analysis_port       -     @661 
+        put_export         uvm_put_imp             -     @643 
+    vseqrh                 virtual_sequencer       -     @504 
+      rsp_export           uvm_analysis_export     -     @512 
+      seq_item_export      uvm_seq_item_pull_imp   -     @618 
+      arbitration_queue    array                   0     -    
+      lock_queue           array                   0     -    
+      num_last_reqs        integral                32    'd1  
+      num_last_rsps        integral                32    'd1  
+--------------------------------------------------------------
+
+UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 0: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+UVM_INFO ../tb/scoreboard.sv(21) @ 0: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+UVM_INFO ../test/test.sv(67) @ 0: uvm_test_top [write_read_test] test started
+UVM_INFO ../src_agent/src_driver.sv(36) @ 0: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 2000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(60) @ 2000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 2000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = x
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 6000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 6000ps failed at 10000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 10000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 14000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 14000ps failed at 18000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 18000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 18000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 22000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 22000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 22000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 18000ps failed at 22000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 22000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 22000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 26000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 26000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 22000ps failed at 26000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 26000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 26000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 26000ps failed at 30000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 30000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 30000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 30000ps failed at 34000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 34000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 34000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 38000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 38000ps failed at 42000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 42000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 42000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 46000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 42000ps failed at 46000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 46000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 91: top.DUT.assertions.READ_NOP1: at time 46000 ps
+Read NOP1 transition verified
+UVM_INFO ../src_agent/src_driver.sv(60) @ 50000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 50000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 46000ps failed at 50000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 50000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 96: top.DUT.assertions.READ_CAS: at time 50000 ps
+Read CAS transition verified
+UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 54000: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+UVM_INFO ../tb/scoreboard.sv(25) @ 54000: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+UVM_INFO ../tb/scoreboard.sv(21) @ 54000: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 50000ps failed at 54000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 54000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 101: top.DUT.assertions.READ_NOP2: at time 54000 ps
+Read NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 54000ps failed at 58000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 58000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 106: top.DUT.assertions.READ_NOP3: at time 58000 ps
+Read NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 62000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 62000ps failed at 66000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 66000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 66000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 70000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 70000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 70000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 66000ps failed at 70000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 70000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 70000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 74000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 74000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 70000ps failed at 74000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 74000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 74000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 74000ps failed at 78000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 78000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 78000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 78000ps failed at 82000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 82000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 82000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 86000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 86000ps failed at 90000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 90000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 90000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 94000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+UVM_INFO ../src_agent/src_driver.sv(38) @ 94000: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 98000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 98000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+UVM_INFO ../src_agent/src_driver.sv(38) @ 98000: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+Info: "../rtl/checker_file.sv", 76: top.DUT.assertions.RESET_IDLE: at time 98000 ps
+Reset to IDLE transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 102000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+Info: "../rtl/checker_file.sv", 76: top.DUT.assertions.RESET_IDLE: at time 102000 ps
+Reset to IDLE transition verified
+Info: "../rtl/checker_file.sv", 71: top.DUT.assertions.RESET: at time 102000 ps
+Read/Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(60) @ 106000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 106000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+Info: "../rtl/checker_file.sv", 76: top.DUT.assertions.RESET_IDLE: at time 106000 ps
+Reset to IDLE transition verified
+Info: "../rtl/checker_file.sv", 71: top.DUT.assertions.RESET: at time 106000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 71: top.DUT.assertions.RESET: started at 106000ps failed at 110000ps
+	Offending '((((!in_HWRITE) && (!in_HSEL)) && (!in_HWDATA)) && (!in_HADDR))'
+Error: "../rtl/checker_file.sv", 71: top.DUT.assertions.RESET: at time 110000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 114000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 114000ps failed at 118000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 118000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 118000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 122000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 122000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 122000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 118000ps failed at 122000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 122000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 122000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 126000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 126000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 122000ps failed at 126000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 126000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 126000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 126000ps failed at 130000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 130000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 130000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 130000ps failed at 134000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 134000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 134000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 138000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 138000ps failed at 142000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 142000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 142000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 146000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+UVM_INFO ../src_agent/src_driver.sv(38) @ 146000: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 150000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 150000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+Info: "../rtl/checker_file.sv", 76: top.DUT.assertions.RESET_IDLE: at time 150000 ps
+Reset to IDLE transition verified
+UVM_INFO ../src_agent/src_driver.sv(75) @ 154000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+Info: "../rtl/checker_file.sv", 76: top.DUT.assertions.RESET_IDLE: at time 154000 ps
+Reset to IDLE transition verified
+Info: "../rtl/checker_file.sv", 71: top.DUT.assertions.RESET: at time 154000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 71: top.DUT.assertions.RESET: started at 154000ps failed at 158000ps
+	Offending '((((!in_HWRITE) && (!in_HSEL)) && (!in_HWDATA)) && (!in_HADDR))'
+Error: "../rtl/checker_file.sv", 71: top.DUT.assertions.RESET: at time 158000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 162000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 162000ps failed at 166000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 166000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 166000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 170000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 166000ps failed at 170000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 170000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 91: top.DUT.assertions.READ_NOP1: at time 170000 ps
+Read NOP1 transition verified
+UVM_INFO ../src_agent/src_driver.sv(60) @ 174000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 174000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 170000ps failed at 174000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 174000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 96: top.DUT.assertions.READ_CAS: at time 174000 ps
+Read CAS transition verified
+UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 178000: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+UVM_ERROR ../tb/scoreboard.sv(27) @ 178000: uvm_test_top.envh.sbh [scoreboard] Data comparision failed
+UVM_INFO ../tb/scoreboard.sv(21) @ 178000: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 174000ps failed at 178000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 178000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 101: top.DUT.assertions.READ_NOP2: at time 178000 ps
+Read NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 178000ps failed at 182000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 182000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 106: top.DUT.assertions.READ_NOP3: at time 182000 ps
+Read NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 186000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 186000ps failed at 190000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 190000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 190000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 194000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 194000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 194000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 190000ps failed at 194000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 194000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 194000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 198000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 198000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 194000ps failed at 198000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 198000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 198000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 198000ps failed at 202000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 202000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 202000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 202000ps failed at 206000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 206000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 206000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 210000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 210000ps failed at 214000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 214000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 214000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 218000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 214000ps failed at 218000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 218000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 91: top.DUT.assertions.READ_NOP1: at time 218000 ps
+Read NOP1 transition verified
+UVM_INFO ../src_agent/src_driver.sv(60) @ 222000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 222000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 218000ps failed at 222000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 222000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 96: top.DUT.assertions.READ_CAS: at time 222000 ps
+Read CAS transition verified
+UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 226000: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+UVM_INFO ../tb/scoreboard.sv(25) @ 226000: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+UVM_INFO ../tb/scoreboard.sv(21) @ 226000: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 222000ps failed at 226000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 226000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 101: top.DUT.assertions.READ_NOP2: at time 226000 ps
+Read NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 226000ps failed at 230000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 230000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 106: top.DUT.assertions.READ_NOP3: at time 230000 ps
+Read NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 234000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 234000ps failed at 238000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 238000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 238000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 242000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 242000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 242000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 238000ps failed at 242000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 242000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 242000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 246000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 246000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 242000ps failed at 246000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 246000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 246000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 246000ps failed at 250000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 250000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 250000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 250000ps failed at 254000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 254000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 254000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 258000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 258000ps failed at 262000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 262000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 262000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 266000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 262000ps failed at 266000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 266000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 91: top.DUT.assertions.READ_NOP1: at time 266000 ps
+Read NOP1 transition verified
+UVM_INFO ../src_agent/src_driver.sv(60) @ 270000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 270000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 266000ps failed at 270000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 270000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 96: top.DUT.assertions.READ_CAS: at time 270000 ps
+Read CAS transition verified
+UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 274000: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+UVM_INFO ../tb/scoreboard.sv(25) @ 274000: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+UVM_INFO ../tb/scoreboard.sv(21) @ 274000: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 270000ps failed at 274000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 274000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 101: top.DUT.assertions.READ_NOP2: at time 274000 ps
+Read NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 274000ps failed at 278000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 278000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 106: top.DUT.assertions.READ_NOP3: at time 278000 ps
+Read NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 282000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 282000ps failed at 286000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 286000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 286000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 290000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 290000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 290000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 286000ps failed at 290000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 290000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 290000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 294000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 294000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 290000ps failed at 294000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 294000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 294000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 294000ps failed at 298000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 298000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 298000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 298000ps failed at 302000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 302000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 302000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 306000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 306000ps failed at 310000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 310000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 310000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 314000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 310000ps failed at 314000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 314000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 91: top.DUT.assertions.READ_NOP1: at time 314000 ps
+Read NOP1 transition verified
+UVM_INFO ../src_agent/src_driver.sv(60) @ 318000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 318000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 314000ps failed at 318000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 318000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 96: top.DUT.assertions.READ_CAS: at time 318000 ps
+Read CAS transition verified
+UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 322000: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+UVM_INFO ../tb/scoreboard.sv(25) @ 322000: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+UVM_INFO ../tb/scoreboard.sv(21) @ 322000: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 318000ps failed at 322000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 322000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 101: top.DUT.assertions.READ_NOP2: at time 322000 ps
+Read NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 322000ps failed at 326000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 326000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 106: top.DUT.assertions.READ_NOP3: at time 326000 ps
+Read NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 330000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 330000ps failed at 334000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 334000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 334000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 338000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 338000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 338000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 334000ps failed at 338000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 338000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 338000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 342000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 342000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 338000ps failed at 342000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 342000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 342000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 342000ps failed at 346000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 346000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 346000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 346000ps failed at 350000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 350000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 350000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 354000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 354000ps failed at 358000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 358000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 358000 ps
+Read to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(36) @ 362000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 358000ps failed at 362000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 362000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 91: top.DUT.assertions.READ_NOP1: at time 362000 ps
+Read NOP1 transition verified
+UVM_INFO ../src_agent/src_driver.sv(60) @ 366000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+UVM_INFO ../src_agent/src_driver.sv(68) @ 366000: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 362000ps failed at 366000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 366000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 96: top.DUT.assertions.READ_CAS: at time 366000 ps
+Read CAS transition verified
+UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 370000: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+UVM_INFO ../tb/scoreboard.sv(25) @ 370000: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+UVM_INFO ../tb/scoreboard.sv(21) @ 370000: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 366000ps failed at 370000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 370000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 101: top.DUT.assertions.READ_NOP2: at time 370000 ps
+Read NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 370000ps failed at 374000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 374000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 106: top.DUT.assertions.READ_NOP3: at time 374000 ps
+Read NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 378000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 378000ps failed at 382000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 382000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 111: top.DUT.assertions.WRITE_ACT: at time 382000 ps
+Write to ACT transition verified
+UVM_INFO ../src_agent/src_driver.sv(72) @ 386000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+UVM_INFO ../src_agent/src_seqs.sv(42) @ 386000: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+UVM_INFO ../src_agent/src_driver.sv(36) @ 386000: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 382000ps failed at 386000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 386000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 116: top.DUT.assertions.WRITE_NOP1: at time 386000 ps
+Write NOP1 transition verified
+UVM_INFO ../src_agent/src_monitor.sv(48) @ 390000: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+UVM_INFO ../src_agent/src_driver.sv(75) @ 390000: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 386000ps failed at 390000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 390000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 121: top.DUT.assertions.WRITE_CAS: at time 390000 ps
+Write CAS transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 390000ps failed at 394000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b0110)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 394000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 126: top.DUT.assertions.WRITE_NOP2: at time 394000 ps
+Write NOP2 transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 394000ps failed at 398000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 398000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 131: top.DUT.assertions.WRITE_NOP3: at time 398000 ps
+Write NOP3 transition verified
+Info: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 402000 ps
+Read/Write to ACT transition verified
+"../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: started at 402000ps failed at 406000ps
+	Offending '(sdram_top.sdram_controller.state == 4'b1)'
+Error: "../rtl/checker_file.sv", 81: top.DUT.assertions.READ_WRITE_ACT: at time 406000 ps
+Read/Write to ACT transition failed
+Info: "../rtl/checker_file.sv", 86: top.DUT.assertions.READ_ACT: at time 406000 ps
+Read to ACT transition verified
+UVM_INFO /home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_objection.svh(1274) @ 410000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  100
+UVM_WARNING :    0
+UVM_ERROR :    1
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVMTOP]     1
+[dst_monitor]     7
+[scoreboard]    13
+[src_agent]     1
+[src_driver]    56
+[src_monitor]    10
+[write_read_seq]    10
+[write_read_test]     1
+$finish called from file "/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time               410000
+"../rtl/checker_file.sv", 138: top.DUT.assertions.CRESET_IDLE, 102 attempts, 5 match
+"../rtl/checker_file.sv", 139: top.DUT.assertions.CREAD_WRITE_ACT, 102 attempts, 17 match
+"../rtl/checker_file.sv", 140: top.DUT.assertions.CREAD_ACT, 102 attempts, 9 match
+"../rtl/checker_file.sv", 141: top.DUT.assertions.CREAD_NOP1, 102 attempts, 6 match
+"../rtl/checker_file.sv", 142: top.DUT.assertions.CREAD_CAS, 102 attempts, 6 match
+"../rtl/checker_file.sv", 143: top.DUT.assertions.CREAD_NOP2, 102 attempts, 6 match
+"../rtl/checker_file.sv", 144: top.DUT.assertions.CREAD_NOP3, 102 attempts, 6 match
+"../rtl/checker_file.sv", 145: top.DUT.assertions.CWRITE_ACT, 102 attempts, 8 match
+"../rtl/checker_file.sv", 146: top.DUT.assertions.CWRITE_NOP1, 102 attempts, 8 match
+"../rtl/checker_file.sv", 147: top.DUT.assertions.CWRITE_CAS, 102 attempts, 8 match
+"../rtl/checker_file.sv", 148: top.DUT.assertions.CWRITE_NOP2, 102 attempts, 8 match
+"../rtl/checker_file.sv", 149: top.DUT.assertions.CWRITE_NOP3, 102 attempts, 8 match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 410000 ps
+CPU Time:      0.830 seconds;       Data structure size: 256.6Mb
+Mon Feb  2 16:56:43 2026

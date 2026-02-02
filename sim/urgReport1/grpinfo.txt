@@ -1,0 +1,91 @@
+Group : sdram_pkg::src_monitor::cg
+
+===============================================================================
+Group : sdram_pkg::src_monitor::cg
+===============================================================================
+SCORE  WEIGHT GOAL   AT LEAST AUTO BIN MAX PRINT MISSING 
+  0.00 1      100    1        64           64            
+
+
+Source File(s) : 
+
+/home1/BPRN08/VegiJ/SDRAM/sim/../src_agent/src_monitor.sv
+
+
+
+-------------------------------------------------------------------------------
+
+Summary for Group   sdram_pkg::src_monitor::cg
+
+
+
+CATEGORY  EXPECTED UNCOVERED COVERED PERCENT 
+Variables 6        6         0       0.00    
+
+
+Variables for Group  sdram_pkg::src_monitor::cg
+
+
+VARIABLE EXPECTED UNCOVERED COVERED PERCENT GOAL WEIGHT AT LEAST AUTO BIN MAX COMMENT 
+RESET    2        2         0       0.00    100  1      1        0                    
+WRITE    2        2         0       0.00    100  1      1        0                    
+SEL      2        2         0       0.00    100  1      1        0                    
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable RESET
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for RESET
+
+
+Uncovered bins
+
+NAME COUNT AT LEAST NUMBER 
+one  0     1        1      
+zero 0     1        1      
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable WRITE
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for WRITE
+
+
+Uncovered bins
+
+NAME COUNT AT LEAST NUMBER 
+one  0     1        1      
+zero 0     1        1      
+
+
+-------------------------------------------------------------------------------
+
+Summary for Variable SEL
+
+
+CATEGORY          EXPECTED UNCOVERED COVERED PERCENT 
+User Defined Bins 2        2         0       0.00    
+
+
+User Defined Bins for SEL
+
+
+Uncovered bins
+
+NAME COUNT AT LEAST NUMBER 
+one  0     1        1      
+zero 0     1        1      
+
+

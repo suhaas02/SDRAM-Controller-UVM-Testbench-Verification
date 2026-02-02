@@ -1,0 +1,2032 @@
+# vsim -assertdebug -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit mem_cov2;run -all; exit" -wlf wave_file2.wlf -l test2.log -sv_seed random work.top "+UVM_TESTNAME=write_read_test" 
+# Start time: 18:55:02 on Feb 02,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "sdram_controller(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim
+# //  Version 2022.1 linux Jan 29 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.sdram_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.sdram_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.CUBIND(fast)
+# Loading work.top(fast)
+# Loading work.sdram_if(fast__2)
+# Loading work.sdram_top(fast)
+# Loading work.sdram_controller(fast)
+# Loading work.sdram_model(fast)
+# Loading work.checker_file(fast)
+# Loading /home/cad/eda/Questa-sim/questasim/uvm-1.1d/linux/uvm_dpi.so
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# Sv_Seed = 4039453716
+#  log -r /* 
+# coverage save -onexit mem_cov2
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test write_read_test...
+# UVM_INFO ../src_agent/src_agent.sv(29) @ 0: uvm_test_top.envh.sagh [src_agent] Driver, seqr connection successful
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               write_read_test         -     @472 
+#   envh                     environment             -     @479 
+#     dagh                   dst_agent               -     @503 
+#       dmonh                dst_monitor             -     @706 
+#         put_port           uvm_blocking_put_port   -     @713 
+#     sagh                   src_agent               -     @496 
+#       sdrvh                src_driver              -     @723 
+#         rsp_port           uvm_analysis_port       -     @738 
+#         seq_item_port      uvm_seq_item_pull_port  -     @730 
+#       smonh                src_monitor             -     @855 
+#         put_port           uvm_blocking_put_port   -     @862 
+#       sseqrh               src_sequencer           -     @746 
+#         rsp_export         uvm_analysis_export     -     @753 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @847 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     sbh                    scoreboard              -     @619 
+#       dfifoh               uvm_tlm_fifo #(T)       -     @665 
+#         get_ap             uvm_analysis_port       -     @696 
+#         get_peek_export    uvm_get_peek_imp        -     @680 
+#         put_ap             uvm_analysis_port       -     @688 
+#         put_export         uvm_put_imp             -     @672 
+#       sfifoh               uvm_tlm_fifo #(T)       -     @626 
+#         get_ap             uvm_analysis_port       -     @657 
+#         get_peek_export    uvm_get_peek_imp        -     @641 
+#         put_ap             uvm_analysis_port       -     @649 
+#         put_export         uvm_put_imp             -     @633 
+#     vseqrh                 virtual_sequencer       -     @510 
+#       rsp_export           uvm_analysis_export     -     @517 
+#       seq_item_export      uvm_seq_item_pull_imp   -     @611 
+#       arbitration_queue    array                   0     -    
+#       lock_queue           array                   0     -    
+#       num_last_reqs        integral                32    'd1  
+#       num_last_rsps        integral                32    'd1  
+# --------------------------------------------------------------
+# 
+# UVM_INFO ../test/test.sv(67) @ 0: uvm_test_top [write_read_test] test started
+# UVM_INFO ../tb/scoreboard.sv(21) @ 0: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 0: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 0: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 2: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 2: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = x
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 2: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 6: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Out_ready signal property verified
+#    Time: 10 ns Started: 10 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 14 ns Started: 10 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 18 ns Started: 14 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 22: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 22: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 22: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 22 ns Started: 18 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 26: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 26: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 26 ns Started: 22 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 30 ns Started: 26 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 34 ns Started: 34 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 34 ns Started: 30 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 38 ns Started: 34 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 42 ns Started: 38 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 46: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 46 ns Started: 42 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 50: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 50: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 50 ns Started: 46 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 54: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 54: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 54: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 54 ns Started: 50 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 54 ns Started: 50 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 58 ns Started: 54 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 58 ns Started: 58 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 62 ns Started: 58 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 66 ns Started: 62 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 70: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 70: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 70: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 70 ns Started: 66 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 74: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 74: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 74 ns Started: 70 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 78 ns Started: 74 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 82 ns Started: 82 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 82 ns Started: 78 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 86 ns Started: 82 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 90 ns Started: 86 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 94: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 94 ns Started: 90 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 98: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 98: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 98 ns Started: 94 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 102: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 102: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 102: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 102 ns Started: 98 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 102 ns Started: 98 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 106 ns Started: 102 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 106 ns Started: 106 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 110 ns Started: 106 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 114 ns Started: 110 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 118: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 118: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 118: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 118 ns Started: 114 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 122: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 122: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 122 ns Started: 118 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 126 ns Started: 122 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 130 ns Started: 130 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 130 ns Started: 126 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 134 ns Started: 130 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 138 ns Started: 134 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 142: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 142 ns Started: 138 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 146: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 146: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 146 ns Started: 142 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 150: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 150: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 150: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 150 ns Started: 146 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 150 ns Started: 146 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 154 ns Started: 150 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 154 ns Started: 154 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 158 ns Started: 154 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 162 ns Started: 158 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 166: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 166: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 166: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 166 ns Started: 162 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 170: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 170: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 170 ns Started: 166 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 174 ns Started: 170 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 178 ns Started: 178 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 178 ns Started: 174 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 182 ns Started: 178 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 186 ns Started: 182 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 190: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 190 ns Started: 186 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 194: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 194: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 194 ns Started: 190 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 198: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 198: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 198: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 198 ns Started: 194 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 198 ns Started: 194 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 202 ns Started: 198 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 202 ns Started: 202 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 206 ns Started: 202 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 210 ns Started: 206 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 214: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 214: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 214: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 214 ns Started: 210 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 218: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 218: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 218 ns Started: 214 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 222 ns Started: 218 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 226 ns Started: 226 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 226 ns Started: 222 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 230 ns Started: 226 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 234 ns Started: 230 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 238: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(38) @ 238: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 242: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 242: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Reset to IDLE transition verified
+#    Time: 242 ns Started: 242 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 242 ns Started: 242 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 246: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# ** Info: Out_ready signal property verified
+#    Time: 246 ns Started: 246 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Reset to IDLE transition verified
+#    Time: 246 ns Started: 246 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 246 ns Started: 246 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# ** Info: Out_ready signal property verified
+#    Time: 250 ns Started: 250 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 254 ns Started: 250 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 258 ns Started: 254 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 262: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 262 ns Started: 258 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 266: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 266: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 266 ns Started: 262 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 270: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 270: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 270: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 270 ns Started: 266 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 270 ns Started: 266 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 274 ns Started: 270 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 274 ns Started: 274 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 278 ns Started: 274 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 282 ns Started: 278 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 286: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 286: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 286: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 286 ns Started: 282 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 290: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 290: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 290 ns Started: 286 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 294 ns Started: 290 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 298 ns Started: 298 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 298 ns Started: 294 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 302 ns Started: 298 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 306 ns Started: 302 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 310: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 310 ns Started: 306 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 314: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 314: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 314 ns Started: 310 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 318: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 318: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 318: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 318 ns Started: 314 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 318 ns Started: 314 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 322 ns Started: 318 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 322 ns Started: 322 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 326 ns Started: 322 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 330 ns Started: 326 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 334: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 334: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 334: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 334 ns Started: 330 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 338: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 338: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 338 ns Started: 334 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 342 ns Started: 338 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 346 ns Started: 346 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 346 ns Started: 342 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 350 ns Started: 346 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 354 ns Started: 350 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 358: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 358 ns Started: 354 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 362: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 362: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 362 ns Started: 358 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 366: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 366: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 366: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 366 ns Started: 362 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 366 ns Started: 362 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 370 ns Started: 366 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 370 ns Started: 370 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 374 ns Started: 370 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 378 ns Started: 374 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 382: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 382: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 382: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 382 ns Started: 378 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 386: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 386: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 386 ns Started: 382 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 390 ns Started: 386 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 394 ns Started: 394 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 394 ns Started: 390 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 398 ns Started: 394 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 402 ns Started: 398 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 406: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 406 ns Started: 402 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 410: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 410: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 410 ns Started: 406 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 414: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 414: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 414: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 414 ns Started: 410 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 414 ns Started: 410 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 418 ns Started: 414 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 418 ns Started: 418 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 422 ns Started: 418 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 426 ns Started: 422 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 430: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 430: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 430: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 430 ns Started: 426 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 434: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 434: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 434 ns Started: 430 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 438 ns Started: 434 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 442 ns Started: 442 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 442 ns Started: 438 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 446 ns Started: 442 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 450 ns Started: 446 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 454: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 454 ns Started: 450 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 458: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 458: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 458 ns Started: 454 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 462: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 462: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 462: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 462 ns Started: 458 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 462 ns Started: 458 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 466 ns Started: 462 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 466 ns Started: 466 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 470 ns Started: 466 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 474 ns Started: 470 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 478: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 478: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 478: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 478 ns Started: 474 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 482: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 482: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 482 ns Started: 478 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 486 ns Started: 482 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 490 ns Started: 490 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 490 ns Started: 486 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 494 ns Started: 490 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 498 ns Started: 494 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 502: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 502 ns Started: 498 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 506: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 506: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 506 ns Started: 502 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 510: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 510: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 510: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 510 ns Started: 506 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 510 ns Started: 506 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 514 ns Started: 510 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 514 ns Started: 514 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 518 ns Started: 514 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 522 ns Started: 518 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 526: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 526: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 526: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 526 ns Started: 522 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 530: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 530: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 530 ns Started: 526 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 534 ns Started: 530 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 538 ns Started: 538 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 538 ns Started: 534 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 542 ns Started: 538 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 546 ns Started: 542 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 550: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 550 ns Started: 546 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 554: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 554: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 554 ns Started: 550 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 558: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 558: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 558: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 558 ns Started: 554 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 558 ns Started: 554 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 562 ns Started: 558 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 562 ns Started: 562 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 566 ns Started: 562 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 570 ns Started: 566 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 574: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 574: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 574: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 574 ns Started: 570 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 578: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 578: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 578 ns Started: 574 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 582 ns Started: 578 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 586 ns Started: 586 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 586 ns Started: 582 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 590 ns Started: 586 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 594 ns Started: 590 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 598: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 598 ns Started: 594 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 602: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 602: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 602 ns Started: 598 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 606: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 606: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 606: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 606 ns Started: 602 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 606 ns Started: 602 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 610 ns Started: 606 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 610 ns Started: 610 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 614 ns Started: 610 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 618 ns Started: 614 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 622: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 622: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 622: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 622 ns Started: 618 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 626: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 626: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 626 ns Started: 622 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 630 ns Started: 626 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 634 ns Started: 634 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 634 ns Started: 630 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 638 ns Started: 634 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 642 ns Started: 638 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 646: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 646 ns Started: 642 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 650: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 650: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 650 ns Started: 646 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 654: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 654: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 654: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 654 ns Started: 650 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 654 ns Started: 650 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 658 ns Started: 654 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 658 ns Started: 658 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 662 ns Started: 658 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 666 ns Started: 662 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 670: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 670: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 670: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 670 ns Started: 666 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 674: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 674: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 674 ns Started: 670 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 678 ns Started: 674 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 682 ns Started: 682 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 682 ns Started: 678 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 686 ns Started: 682 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 690 ns Started: 686 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 694: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 694 ns Started: 690 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 698: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 698: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 698 ns Started: 694 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 702: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 702: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 702: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 702 ns Started: 698 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 702 ns Started: 698 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 706 ns Started: 702 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 706 ns Started: 706 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 710 ns Started: 706 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 714 ns Started: 710 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 718: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 718: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 718: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 718 ns Started: 714 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 722: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 722: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 722 ns Started: 718 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 726 ns Started: 722 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 730 ns Started: 730 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 730 ns Started: 726 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 734 ns Started: 730 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 738 ns Started: 734 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 742: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 742 ns Started: 738 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 746: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 746: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 746 ns Started: 742 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 750: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 750: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 750: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 750 ns Started: 746 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 750 ns Started: 746 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 754 ns Started: 750 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 754 ns Started: 754 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 758 ns Started: 754 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 762 ns Started: 758 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 766: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 766: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 766: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 766 ns Started: 762 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 770: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 770: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 770 ns Started: 766 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 774 ns Started: 770 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 778 ns Started: 778 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 778 ns Started: 774 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 782 ns Started: 778 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 786 ns Started: 782 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 790: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 790 ns Started: 786 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 794: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 794: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 794 ns Started: 790 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 798: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 798: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 798: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 798 ns Started: 794 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 798 ns Started: 794 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 802 ns Started: 798 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 802 ns Started: 802 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 806 ns Started: 802 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 810 ns Started: 806 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 814: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 814: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 814: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 814 ns Started: 810 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 818: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 818: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 818 ns Started: 814 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 822 ns Started: 818 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 826 ns Started: 826 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 826 ns Started: 822 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 830 ns Started: 826 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 834 ns Started: 830 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 838: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 838 ns Started: 834 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 842: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 842: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 842 ns Started: 838 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 846: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 846: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 846: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 846 ns Started: 842 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 846 ns Started: 842 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 850 ns Started: 846 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 850 ns Started: 850 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 854 ns Started: 850 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 858 ns Started: 854 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 862: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 862: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 862: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 862 ns Started: 858 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 866: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 866: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 866 ns Started: 862 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 870 ns Started: 866 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 874 ns Started: 874 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 874 ns Started: 870 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 878 ns Started: 874 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 882 ns Started: 878 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 886: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 886 ns Started: 882 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 890: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 890: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 890 ns Started: 886 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 894: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 894: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 894: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 894 ns Started: 890 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 894 ns Started: 890 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 898 ns Started: 894 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 898 ns Started: 898 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 902 ns Started: 898 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 906 ns Started: 902 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 910: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 910: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 910: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 910 ns Started: 906 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 914: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 914: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 914 ns Started: 910 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 918 ns Started: 914 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 922 ns Started: 922 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 922 ns Started: 918 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 926 ns Started: 922 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 930 ns Started: 926 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 934: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(38) @ 934: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 938: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 938: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Reset to IDLE transition verified
+#    Time: 938 ns Started: 938 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 938 ns Started: 938 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 942: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# ** Info: Out_ready signal property verified
+#    Time: 942 ns Started: 942 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Reset to IDLE transition verified
+#    Time: 942 ns Started: 942 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 942 ns Started: 942 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# ** Info: Out_ready signal property verified
+#    Time: 946 ns Started: 946 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 950 ns Started: 946 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 954 ns Started: 950 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 958: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 958 ns Started: 954 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 962: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 962: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 962 ns Started: 958 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 966: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 966: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 966: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 966 ns Started: 962 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 966 ns Started: 962 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 970 ns Started: 966 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 970 ns Started: 970 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 974 ns Started: 970 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 978 ns Started: 974 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 982: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 982: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 982: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 982 ns Started: 978 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 986: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 986: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 986 ns Started: 982 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 990 ns Started: 986 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 994 ns Started: 994 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 994 ns Started: 990 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 998 ns Started: 994 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1002 ns Started: 998 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1006: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1006 ns Started: 1002 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1010: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1010: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1010 ns Started: 1006 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1014: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1014: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1014: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1014 ns Started: 1010 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1014 ns Started: 1010 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1018 ns Started: 1014 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1018 ns Started: 1018 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1022 ns Started: 1018 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1026 ns Started: 1022 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1030: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1030: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1030: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1030 ns Started: 1026 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1034: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1034: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1034 ns Started: 1030 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1038 ns Started: 1034 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1042 ns Started: 1042 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1042 ns Started: 1038 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1046 ns Started: 1042 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1050 ns Started: 1046 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1054: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1054 ns Started: 1050 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1058: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1058: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1058 ns Started: 1054 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1062: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1062: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1062: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1062 ns Started: 1058 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1062 ns Started: 1058 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1066 ns Started: 1062 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1066 ns Started: 1066 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1070 ns Started: 1066 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1074 ns Started: 1070 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1078: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1078: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1078: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1078 ns Started: 1074 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1082: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1082: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1082 ns Started: 1078 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1086 ns Started: 1082 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1090 ns Started: 1090 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1090 ns Started: 1086 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1094 ns Started: 1090 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1098 ns Started: 1094 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1102: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1102 ns Started: 1098 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1106: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1106: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1106 ns Started: 1102 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1110: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1110: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1110: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1110 ns Started: 1106 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1110 ns Started: 1106 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1114 ns Started: 1110 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1114 ns Started: 1114 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1118 ns Started: 1114 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1122 ns Started: 1118 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1126: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1126: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1126: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1126 ns Started: 1122 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1130: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1130: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1130 ns Started: 1126 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1134 ns Started: 1130 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1138 ns Started: 1138 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1138 ns Started: 1134 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1142 ns Started: 1138 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1146 ns Started: 1142 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1150: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(38) @ 1150: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1154: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1154: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Reset to IDLE transition verified
+#    Time: 1154 ns Started: 1154 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1154 ns Started: 1154 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1158: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# ** Info: Out_ready signal property verified
+#    Time: 1158 ns Started: 1158 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Reset to IDLE transition verified
+#    Time: 1158 ns Started: 1158 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1158 ns Started: 1158 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# ** Info: Out_ready signal property verified
+#    Time: 1162 ns Started: 1162 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1166 ns Started: 1162 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1170 ns Started: 1166 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1174: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1174 ns Started: 1170 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1178: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1178: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1178 ns Started: 1174 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1182: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1182: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1182: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1182 ns Started: 1178 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1182 ns Started: 1178 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1186 ns Started: 1182 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1186 ns Started: 1186 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1190 ns Started: 1186 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1194 ns Started: 1190 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1198: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1198: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1198: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1198 ns Started: 1194 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1202: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1202: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1202 ns Started: 1198 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1206 ns Started: 1202 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1210 ns Started: 1210 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1210 ns Started: 1206 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1214 ns Started: 1210 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1218 ns Started: 1214 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1222: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(38) @ 1222: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1226: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1226: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Reset to IDLE transition verified
+#    Time: 1226 ns Started: 1226 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1226 ns Started: 1226 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1230: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# ** Info: Out_ready signal property verified
+#    Time: 1230 ns Started: 1230 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Reset to IDLE transition verified
+#    Time: 1230 ns Started: 1230 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1230 ns Started: 1230 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# ** Info: Out_ready signal property verified
+#    Time: 1234 ns Started: 1234 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1238 ns Started: 1234 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1242 ns Started: 1238 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1246: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1246 ns Started: 1242 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1250: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1250: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1250 ns Started: 1246 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1254: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1254: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1254: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1254 ns Started: 1250 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1254 ns Started: 1250 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1258 ns Started: 1254 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1258 ns Started: 1258 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1262 ns Started: 1258 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1266 ns Started: 1262 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1270: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1270: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1270: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1270 ns Started: 1266 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1274: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1274: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1274 ns Started: 1270 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1278 ns Started: 1274 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1282 ns Started: 1282 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1282 ns Started: 1278 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1286 ns Started: 1282 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1290 ns Started: 1286 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1294: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1294 ns Started: 1290 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1298: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1298: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1298 ns Started: 1294 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1302: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1302: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1302: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1302 ns Started: 1298 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1302 ns Started: 1298 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1306 ns Started: 1302 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1306 ns Started: 1306 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1310 ns Started: 1306 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1314 ns Started: 1310 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1318: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1318: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1318: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1318 ns Started: 1314 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1322: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1322: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1322 ns Started: 1318 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1326 ns Started: 1322 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1330 ns Started: 1330 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1330 ns Started: 1326 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1334 ns Started: 1330 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1338 ns Started: 1334 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1342: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1342 ns Started: 1338 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1346: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1346: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1346 ns Started: 1342 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1350: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1350: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1350: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1350 ns Started: 1346 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1350 ns Started: 1346 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1354 ns Started: 1350 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1354 ns Started: 1354 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1358 ns Started: 1354 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1362 ns Started: 1358 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1366: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1366: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1366: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1366 ns Started: 1362 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1370: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1370: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1370 ns Started: 1366 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1374 ns Started: 1370 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1378 ns Started: 1378 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1378 ns Started: 1374 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1382 ns Started: 1378 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1386 ns Started: 1382 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1390: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1390 ns Started: 1386 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1394: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1394: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1394 ns Started: 1390 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1398: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1398: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1398: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1398 ns Started: 1394 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1398 ns Started: 1394 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1402 ns Started: 1398 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1402 ns Started: 1402 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1406 ns Started: 1402 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1410 ns Started: 1406 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1414: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1414: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1414: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1414 ns Started: 1410 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1418: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1418: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1418 ns Started: 1414 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1422 ns Started: 1418 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1426 ns Started: 1426 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1426 ns Started: 1422 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1430 ns Started: 1426 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1434 ns Started: 1430 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1438: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1438 ns Started: 1434 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1442: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1442: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1442 ns Started: 1438 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1446: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1446: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1446: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1446 ns Started: 1442 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1446 ns Started: 1442 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1450 ns Started: 1446 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1450 ns Started: 1450 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1454 ns Started: 1450 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1458 ns Started: 1454 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1462: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1462: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1462: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1462 ns Started: 1458 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1466: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1466: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1466 ns Started: 1462 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1470 ns Started: 1466 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1474 ns Started: 1474 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1474 ns Started: 1470 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1478 ns Started: 1474 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1482 ns Started: 1478 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1486: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1486 ns Started: 1482 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1490: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1490: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1490 ns Started: 1486 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1494: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1494: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1494: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1494 ns Started: 1490 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1494 ns Started: 1490 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1498 ns Started: 1494 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1498 ns Started: 1498 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1502 ns Started: 1498 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1506 ns Started: 1502 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1510: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1510: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1510: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1510 ns Started: 1506 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1514: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1514: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1514 ns Started: 1510 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1518 ns Started: 1514 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1522 ns Started: 1522 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1522 ns Started: 1518 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1526 ns Started: 1522 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1530 ns Started: 1526 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1534: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1534 ns Started: 1530 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1538: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1538: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1538 ns Started: 1534 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1542: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1542: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1542: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1542 ns Started: 1538 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1542 ns Started: 1538 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1546 ns Started: 1542 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1546 ns Started: 1546 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1550 ns Started: 1546 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1554 ns Started: 1550 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1558: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1558: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1558: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1558 ns Started: 1554 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1562: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1562: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1562 ns Started: 1558 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1566 ns Started: 1562 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1570 ns Started: 1570 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1570 ns Started: 1566 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1574 ns Started: 1570 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1578 ns Started: 1574 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1582: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1582 ns Started: 1578 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1586: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1586: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1586 ns Started: 1582 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1590: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1590: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1590: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1590 ns Started: 1586 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1590 ns Started: 1586 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1594 ns Started: 1590 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1594 ns Started: 1594 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1598 ns Started: 1594 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1602 ns Started: 1598 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1606: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1606: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1606: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1606 ns Started: 1602 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1610: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1610: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1610 ns Started: 1606 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1614 ns Started: 1610 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1618 ns Started: 1618 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1618 ns Started: 1614 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1622 ns Started: 1618 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1626 ns Started: 1622 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1630: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1630 ns Started: 1626 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1634: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1634: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1634 ns Started: 1630 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1638: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1638: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1638: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1638 ns Started: 1634 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1638 ns Started: 1634 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1642 ns Started: 1638 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1642 ns Started: 1642 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1646 ns Started: 1642 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1650 ns Started: 1646 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1654: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1654: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1654: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1654 ns Started: 1650 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1658: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1658: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1658 ns Started: 1654 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1662 ns Started: 1658 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1666 ns Started: 1666 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1666 ns Started: 1662 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1670 ns Started: 1666 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1674 ns Started: 1670 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1678: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1678 ns Started: 1674 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1682: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1682: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1682 ns Started: 1678 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1686: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1686: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1686: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1686 ns Started: 1682 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1686 ns Started: 1682 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1690 ns Started: 1686 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1690 ns Started: 1690 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1694 ns Started: 1690 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1698 ns Started: 1694 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1702: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1702: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1702: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1702 ns Started: 1698 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1706: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1706: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1706 ns Started: 1702 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1710 ns Started: 1706 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1714 ns Started: 1714 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1714 ns Started: 1710 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1718 ns Started: 1714 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1722 ns Started: 1718 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1726: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1726 ns Started: 1722 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1730: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1730: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1730 ns Started: 1726 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1734: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1734: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1734: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1734 ns Started: 1730 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1734 ns Started: 1730 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1738 ns Started: 1734 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1738 ns Started: 1738 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1742 ns Started: 1738 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1746 ns Started: 1742 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1750: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1750: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1750: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1750 ns Started: 1746 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1754: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1754: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1754 ns Started: 1750 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1758 ns Started: 1754 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1762 ns Started: 1762 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1762 ns Started: 1758 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1766 ns Started: 1762 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1770 ns Started: 1766 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1774: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(38) @ 1774: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1778: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1778: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Reset to IDLE transition verified
+#    Time: 1778 ns Started: 1778 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1778 ns Started: 1778 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1782: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# ** Info: Out_ready signal property verified
+#    Time: 1782 ns Started: 1782 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Reset to IDLE transition verified
+#    Time: 1782 ns Started: 1782 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1782 ns Started: 1782 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# ** Info: Out_ready signal property verified
+#    Time: 1786 ns Started: 1786 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1790 ns Started: 1786 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1794 ns Started: 1790 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1798: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1798 ns Started: 1794 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1802: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1802: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1802 ns Started: 1798 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1806: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1806: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1806: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1806 ns Started: 1802 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1806 ns Started: 1802 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1810 ns Started: 1806 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1810 ns Started: 1810 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1814 ns Started: 1810 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1818 ns Started: 1814 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1822: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1822: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1822: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1822 ns Started: 1818 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1826: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1826: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1826 ns Started: 1822 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1830 ns Started: 1826 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1834 ns Started: 1834 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1834 ns Started: 1830 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1838 ns Started: 1834 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1842 ns Started: 1838 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1846: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1846 ns Started: 1842 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1850: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1850: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1850 ns Started: 1846 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1854: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1854: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1854: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1854 ns Started: 1850 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1854 ns Started: 1850 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1858 ns Started: 1854 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1858 ns Started: 1858 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1862 ns Started: 1858 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1866 ns Started: 1862 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1870: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1870: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1870: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1870 ns Started: 1866 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1874: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1874: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1874 ns Started: 1870 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1878 ns Started: 1874 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1882 ns Started: 1882 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1882 ns Started: 1878 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1886 ns Started: 1882 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1890 ns Started: 1886 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1894: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1894 ns Started: 1890 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1898: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1898: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1898 ns Started: 1894 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1902: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1902: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1902: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1902 ns Started: 1898 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1902 ns Started: 1898 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1906 ns Started: 1902 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1906 ns Started: 1906 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1910 ns Started: 1906 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1914 ns Started: 1910 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1918: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1918: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1918: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1918 ns Started: 1914 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1922: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1922: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1922 ns Started: 1918 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1926 ns Started: 1922 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1930 ns Started: 1930 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1930 ns Started: 1926 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1934 ns Started: 1930 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1938 ns Started: 1934 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1942: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 1942 ns Started: 1938 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 1946: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 1946: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 1946 ns Started: 1942 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 1950: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 1950: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 1950: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 1950 ns Started: 1946 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 1950 ns Started: 1946 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 1954 ns Started: 1950 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 1954 ns Started: 1954 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1958 ns Started: 1954 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 1962 ns Started: 1958 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 1966: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1966: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1966: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 1966 ns Started: 1962 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1970: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 1970: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 1970 ns Started: 1966 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 1974 ns Started: 1970 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 1978 ns Started: 1978 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 1978 ns Started: 1974 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1982 ns Started: 1978 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 1986 ns Started: 1982 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1990: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(38) @ 1990: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 1994: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 1994: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Reset to IDLE transition verified
+#    Time: 1994 ns Started: 1994 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1994 ns Started: 1994 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 1998: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# ** Info: Out_ready signal property verified
+#    Time: 1998 ns Started: 1998 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Reset to IDLE transition verified
+#    Time: 1998 ns Started: 1998 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 1998 ns Started: 1998 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# ** Info: Out_ready signal property verified
+#    Time: 2002 ns Started: 2002 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2006 ns Started: 2002 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 2010 ns Started: 2006 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2014: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 2014 ns Started: 2010 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 2018: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 2018: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 2018 ns Started: 2014 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 2022: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 2022: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 2022: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 2022 ns Started: 2018 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 2022 ns Started: 2018 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 2026 ns Started: 2022 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 2026 ns Started: 2026 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2030 ns Started: 2026 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 2034 ns Started: 2030 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 2038: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 2038: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2038: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 2038 ns Started: 2034 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 2042: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 2042: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 2042 ns Started: 2038 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 2046 ns Started: 2042 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 2050 ns Started: 2050 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 2050 ns Started: 2046 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2054 ns Started: 2050 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 2058 ns Started: 2054 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2062: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 2062 ns Started: 2058 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 2066: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 2066: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 2066 ns Started: 2062 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 2070: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 2070: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 2070: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 2070 ns Started: 2066 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 2070 ns Started: 2066 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 2074 ns Started: 2070 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 2074 ns Started: 2074 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2078 ns Started: 2074 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 2082 ns Started: 2078 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 2086: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 2086: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2086: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 2086 ns Started: 2082 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 2090: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 2090: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 2090 ns Started: 2086 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 2094 ns Started: 2090 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 2098 ns Started: 2098 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 2098 ns Started: 2094 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2102 ns Started: 2098 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 2106 ns Started: 2102 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2110: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 2110 ns Started: 2106 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 2114: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 2114: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 2114 ns Started: 2110 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 2118: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 2118: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 2118: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 2118 ns Started: 2114 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 2118 ns Started: 2114 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 2122 ns Started: 2118 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 2122 ns Started: 2122 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2126 ns Started: 2122 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 2130 ns Started: 2126 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 2134: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 2134: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2134: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 2134 ns Started: 2130 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 2138: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 2138: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 2138 ns Started: 2134 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 2142 ns Started: 2138 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 2146 ns Started: 2146 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 2146 ns Started: 2142 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2150 ns Started: 2146 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 2154 ns Started: 2150 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2158: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Read NOP1 transition verified
+#    Time: 2158 ns Started: 2154 ns  Scope: top.DUT.assertions.READ_NOP1 File: ../rtl/checker_file.sv Line: 100
+# UVM_INFO ../src_agent/src_driver.sv(60) @ 2162: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(68) @ 2162: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# ** Info: Read CAS transition verified
+#    Time: 2162 ns Started: 2158 ns  Scope: top.DUT.assertions.READ_CAS File: ../rtl/checker_file.sv Line: 105
+# UVM_INFO ../dst_agent/dst_monitor.sv(34) @ 2166: uvm_test_top.envh.dagh.dmonh [dst_monitor] In dst_monitor run_phasse
+# UVM_INFO ../tb/scoreboard.sv(25) @ 2166: uvm_test_top.envh.sbh [scoreboard] Data comparision successful
+# UVM_INFO ../tb/scoreboard.sv(21) @ 2166: uvm_test_top.envh.sbh [scoreboard] In scoreboard run_phase
+# ** Info: Read NOP2 transition verified
+#    Time: 2166 ns Started: 2162 ns  Scope: top.DUT.assertions.READ_NOP2 File: ../rtl/checker_file.sv Line: 110
+# ** Info: write_ready property verified
+#    Time: 2166 ns Started: 2162 ns  Scope: top.DUT.assertions.WRITE_READY File: ../rtl/checker_file.sv Line: 150
+# ** Info: Read NOP3 transition verified
+#    Time: 2170 ns Started: 2166 ns  Scope: top.DUT.assertions.READ_NOP3 File: ../rtl/checker_file.sv Line: 115
+# ** Info: Out_ready signal property verified
+#    Time: 2170 ns Started: 2170 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2174 ns Started: 2170 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Write to ACT transition verified
+#    Time: 2178 ns Started: 2174 ns  Scope: top.DUT.assertions.WRITE_ACT File: ../rtl/checker_file.sv Line: 120
+# UVM_INFO ../src_agent/src_driver.sv(72) @ 2182: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 2182: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2182: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Write NOP1 transition verified
+#    Time: 2182 ns Started: 2178 ns  Scope: top.DUT.assertions.WRITE_NOP1 File: ../rtl/checker_file.sv Line: 125
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 2186: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# UVM_INFO ../src_agent/src_monitor.sv(48) @ 2186: uvm_test_top.envh.sagh.smonh [src_monitor] In src monitor run_phase
+# ** Info: Write CAS transition verified
+#    Time: 2186 ns Started: 2182 ns  Scope: top.DUT.assertions.WRITE_CAS File: ../rtl/checker_file.sv Line: 130
+# ** Info: Write NOP2 transition verified
+#    Time: 2190 ns Started: 2186 ns  Scope: top.DUT.assertions.WRITE_NOP2 File: ../rtl/checker_file.sv Line: 135
+# ** Info: Out_ready signal property verified
+#    Time: 2194 ns Started: 2194 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Write NOP3 transition verified
+#    Time: 2194 ns Started: 2190 ns  Scope: top.DUT.assertions.WRITE_NOP3 File: ../rtl/checker_file.sv Line: 140
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2198 ns Started: 2194 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 2202 ns Started: 2198 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2206: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# UVM_INFO ../src_agent/src_driver.sv(38) @ 2206: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_seqs.sv(42) @ 2210: uvm_test_top.envh.sagh.sseqrh@@wrseq [write_read_seq] Done with write, starting with read
+# UVM_INFO ../src_agent/src_driver.sv(36) @ 2210: uvm_test_top.envh.sagh.sdrvh [src_driver] In src_driver run_phase
+# ** Info: Reset to IDLE transition verified
+#    Time: 2210 ns Started: 2210 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2210 ns Started: 2210 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# UVM_INFO ../src_agent/src_driver.sv(75) @ 2214: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving read data
+# ** Info: Out_ready signal property verified
+#    Time: 2214 ns Started: 2214 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Reset to IDLE transition verified
+#    Time: 2214 ns Started: 2214 ns  Scope: top.DUT.assertions.RESET_IDLE File: ../rtl/checker_file.sv Line: 85
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2214 ns Started: 2214 ns  Scope: top.DUT.assertions.RESET File: ../rtl/checker_file.sv Line: 80
+# ** Info: Out_ready signal property verified
+#    Time: 2218 ns Started: 2218 ns  Scope: top.DUT.assertions.OUT_READY File: ../rtl/checker_file.sv Line: 145
+# ** Info: Read/Write to ACT transition verified
+#    Time: 2222 ns Started: 2218 ns  Scope: top.DUT.assertions.READ_WRITE_ACT File: ../rtl/checker_file.sv Line: 90
+# ** Info: Read to ACT transition verified
+#    Time: 2226 ns Started: 2222 ns  Scope: top.DUT.assertions.READ_ACT File: ../rtl/checker_file.sv Line: 95
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 2230: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  516
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [dst_monitor]    43
+# [scoreboard]    85
+# [src_agent]     1
+# [src_driver]   286
+# [src_monitor]    45
+# [write_read_seq]    50
+# [write_read_test]     1
+# ** Note: $finish    : /home/cad/eda/Questa-sim/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 2230 ns  Iteration: 67  Instance: /top
+# Saving coverage database on exit...
+# End time: 18:55:06 on Feb 02,2026, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 2

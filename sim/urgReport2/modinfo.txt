@@ -1,0 +1,80 @@
+===============================================================================
+Module : checker_file
+===============================================================================
+SCORE  ASSERT 
+100.00 100.00 
+
+Module self-instances :
+
+SCORE  ASSERT NAME               
+100.00 100.00 top.DUT.assertions 
+
+
+
+-------------------------------------------------------------------------------
+Assert Coverage for Module : checker_file
+                 Total Attempted Percent Succeeded/Matched Percent 
+Assertions       0     0                 0                         
+Cover properties 12    12        100.00  12                100.00  
+Cover sequences  0     0                 0                         
+Total            12    12        100.00  12                100.00  
+
+
+
+-------------------------------------------------------------------------------
+
+Cover Directives for Properties: Details
+
+Name            Attempts Matches Incomplete 
+CREAD_ACT       102      9       0          
+CREAD_CAS       102      6       0          
+CREAD_NOP1      102      6       1          
+CREAD_NOP2      102      6       0          
+CREAD_NOP3      102      6       0          
+CREAD_WRITE_ACT 102      17      1          
+CRESET_IDLE     102      5       0          
+CWRITE_ACT      102      8       0          
+CWRITE_CAS      102      8       0          
+CWRITE_NOP1     102      8       0          
+CWRITE_NOP2     102      8       0          
+CWRITE_NOP3     102      8       0          
+
+
+-------------------------------------------------------------------------------
+===============================================================================
+Module Instance : top.DUT.assertions
+===============================================================================
+
+Instance :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Instance's subtree :
+
+SCORE  ASSERT 
+100.00 100.00 
+
+
+Module : 
+
+SCORE  ASSERT NAME         
+100.00 100.00 checker_file 
+
+
+Parent : 
+
+none
+----------------
+
+
+Subtrees :
+
+
+no children
+----------------
+
+
+-------------------------------------------------------------------------------
+Since this is the module's only instance, the coverage report is the same as for the module.

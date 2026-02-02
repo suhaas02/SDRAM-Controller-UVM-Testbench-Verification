@@ -1,0 +1,140 @@
+# vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit mem_cov1;run -all; exit" -wlf wave_file1.wlf -l test1.log -sv_seed random work.top "+UVM_TESTNAME=write_only_test" 
+# Start time: 12:01:41 on Feb 01,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim
+# //  Version 2022.1 linux Jan 29 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.sdram_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.sdram_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.sdram_if(fast__2)
+# Loading work.sdram_top(fast)
+# Loading work.sdram_controller(fast)
+# Loading work.sdram_model(fast)
+# Loading /home/cad/eda/Questa-sim/questasim/uvm-1.1d/linux/uvm_dpi.so
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# Sv_Seed = 1250054933
+#  log -r /* 
+# coverage save -onexit mem_cov1
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test write_only_test...
+# UVM_INFO ../src_agent/src_agent.sv(29) @ 0: uvm_test_top.envh.sagh [src_agent] Driver, seqr connection successful
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               write_only_test         -     @472 
+#   envh                     environment             -     @479 
+#     dagh                   dst_agent               -     @503 
+#       dmonh                dst_monitor             -     @628 
+#     sagh                   src_agent               -     @496 
+#       sdrvh                src_driver              -     @637 
+#         rsp_port           uvm_analysis_port       -     @652 
+#         seq_item_port      uvm_seq_item_pull_port  -     @644 
+#       smonh                src_monitor             -     @769 
+#       sseqrh               src_sequencer           -     @660 
+#         rsp_export         uvm_analysis_export     -     @667 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @761 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     sbh                    scoreboard              -     @619 
+#     vseqrh                 virtual_sequencer       -     @510 
+#       rsp_export           uvm_analysis_export     -     @517 
+#       seq_item_export      uvm_seq_item_pull_imp   -     @611 
+#       arbitration_queue    array                   0     -    
+#       lock_queue           array                   0     -    
+#       num_last_reqs        integral                32    'd1  
+#       num_last_rsps        integral                32    'd1  
+# --------------------------------------------------------------
+# 
+# UVM_INFO ../test/test.sv(44) @ 0: uvm_test_top [write_only_test] test started
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 2: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 2: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = x
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 22: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 26: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 26: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 46: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 50: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 50: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 70: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 74: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 74: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 94: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 98: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 98: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 118: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 122: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 122: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 142: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 146: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 146: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 166: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(37) @ 166: uvm_test_top.envh.sagh.sdrvh [src_driver] Reset signal is active
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 174: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 174: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 190: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO ../src_agent/src_driver.sv(59) @ 194: uvm_test_top.envh.sagh.sdrvh [src_driver] Driving write data
+# UVM_INFO ../src_agent/src_driver.sv(67) @ 194: uvm_test_top.envh.sagh.sdrvh [src_driver] out_write_en = 1
+# UVM_INFO ../src_agent/src_driver.sv(71) @ 214: uvm_test_top.envh.sagh.sdrvh [src_driver] Driver write operation done
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 214: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   35
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [src_agent]     1
+# [src_driver]    28
+# [write_only_test]     1
+# ** Note: $finish    : /home/cad/eda/Questa-sim/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 214 ns  Iteration: 67  Instance: /top
+# Saving coverage database on exit...
+# End time: 12:01:48 on Feb 01,2026, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 2

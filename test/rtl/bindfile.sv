@@ -1,0 +1,1 @@
+bind sdram_top checker_file assertions(.*); 

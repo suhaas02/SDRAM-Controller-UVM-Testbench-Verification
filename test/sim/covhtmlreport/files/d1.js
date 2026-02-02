@@ -1,0 +1,2 @@
+var g_data = {"14":{"pr":"/top/DUT/assertions","ty":2,"dui":8,"dun":"work.checker_file","direct":[{"n":["CRESET_IDLE"],"h":14},{"n":["CREAD_WRITE_ACT"],"h":93},{"n":["CREAD_ACT"],"h":50},{"n":["CREAD_NOP1"],"h":42},{"n":["CREAD_CAS"],"h":42},{"n":["CREAD_NOP2"],"h":42},{"n":["CREAD_NOP3"],"h":42},{"n":["CWRITE_ACT"],"h":43},{"n":["CWRITE_NOP1"],"h":43},{"n":["CWRITE_CAS"],"h":43},{"n":["CWRITE_NOP2"],"h":43},{"n":["CWRITE_NOP3"],"h":43},{"n":["COUT_READY"],"h":100},{"n":["CWRITE_READY"],"h":42}]}};
+processDirectivesData(g_data);

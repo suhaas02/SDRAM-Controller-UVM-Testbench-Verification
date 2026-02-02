@@ -1,0 +1,99 @@
+global coverage_group 0 sdram_pkg::src_monitor::cg __coverage_src_monitor.cg unused_src_monitor_cg_loop_label sdram_pkg 0 1 0 0 0  ( 0 
+)
+ 1 1
+ 0 57 /home1/BPRN08/VegiJ/SDRAM/sim/../src_agent/src_monitor.sv
+ 9 0 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+0
+0
+0
+64
+0
+ 0
+
+3
+0
+0
+0
+ 5 RESET 10 0 0 0 0 0 40 src_monitor::sdram_pkg_src_monitor_cg_fn 40 src_monitor::sdram_pkg_src_monitor_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 4 zero 11 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 42 src_monitor::sdram_pkg_src_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 3 one 12 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 42 src_monitor::sdram_pkg_src_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 5 WRITE 14 0 0 0 0 0 42 src_monitor::sdram_pkg_src_monitor_cg_fn_2 42 src_monitor::sdram_pkg_src_monitor_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 4 zero 15 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 42 src_monitor::sdram_pkg_src_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 3 one 16 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 42 src_monitor::sdram_pkg_src_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 3 SEL 18 0 0 0 0 0 42 src_monitor::sdram_pkg_src_monitor_cg_fn_3 42 src_monitor::sdram_pkg_src_monitor_cg_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 4 zero 19 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 42 src_monitor::sdram_pkg_src_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 3 one 20 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 42 src_monitor::sdram_pkg_src_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+end_coverage_group

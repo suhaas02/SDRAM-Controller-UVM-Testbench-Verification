@@ -1,0 +1,2 @@
+var g_data = {"16":{"cvpc":[{"h":["RESET",4,1,17],"cov":[2,0,0.00],"opts":{"goal":"100"}},{"h":["WRITE",4,1,18],"cov":[2,0,0.00],"opts":{"goal":"100"}},{"h":["SEL",4,1,19],"cov":[2,0,0.00],"opts":{"goal":"100"}}],"20":{"cvpc":[{"h":["RESET",4,1,21],"cov":[2,0,0.00],"opts":{"goal":"100"}},{"h":["WRITE",4,1,22],"cov":[2,0,0.00],"opts":{"goal":"100"}},{"h":["SEL",4,1,23],"cov":[2,0,0.00],"opts":{"goal":"100"}}],"cvg":["\\/sdram_pkg::src_monitor::cg ",2],"cvgdata":[6,0,0,0]},"cvg":["/sdram_pkg/src_monitor/cg",1],"cvgdata":[6,0,0,0]}};
+processCoverpointsData(g_data);

@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1769928976.422679754, "rt":17.16, "ut":18.29, "st":0.46}}
+{"vcselab":{"timestamp_begin":1769928993.690387846, "rt":5.78, "ut":0.29, "st":0.11}}
+{"link":{"timestamp_begin":1769928999.599783300, "rt":1.73, "ut":1.33, "st":0.37}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1769928974.991639017}
+{"VCS_COMP_START_TIME": 1769928974.991639017}
+{"VCS_COMP_END_TIME": 1769929006.823016825}
+{"VCS_USER_OPTIONS": "-l vcs.log -timescale=1ns/1ps -sverilog -ntb_opts uvm -debug_access+all -full64 -kdb -lca -P /home/cad/eda/SYNOPSYS/VERDI_2022/verdi/T-2022.06-SP1/share/PLI/VCS/LINUX64/novas.tab /home/cad/eda/SYNOPSYS/VERDI_2022/verdi/T-2022.06-SP1/share/PLI/VCS/LINUX64/pli.a ../rtl/sdram_controller.v ../rtl/sdram_if.sv ../rtl/sdram_model.v ../rtl/sdram_top.v +incdir+../tb +incdir+../test +incdir+../src_agent +incdir+../dst_agent ../test/sdram_pkg.sv ../tb/top.sv"}
+{"vcs1": {"peak_mem": 1963878}}
+{"stitch_vcselab": {"peak_mem": 1964267}}

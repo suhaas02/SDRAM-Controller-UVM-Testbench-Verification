@@ -1,0 +1,43 @@
+Assertions
+
+
+Assertions by Category
+           ASSERT PROPERTIES SEQUENCES
+Total           0         12         0
+Category 0      0         12         0
+
+-------------------------------------------------------------------------------
+
+Assertions by Severity
+           ASSERT PROPERTIES SEQUENCES
+Total           0         12         0
+Severity 0      0         12         0
+
+-------------------------------------------------------------------------------
+
+Summary for Cover Properties
+             NUMBER PERCENT
+Total Number     12  100.00
+Uncovered         0    0.00
+Matches          12  100.00
+
+-------------------------------------------------------------------------------
+
+Detail Report for Cover Properties
+
+Cover Properties Matches:
+         COVER PROPERTIES          CATEGORY SEVERITY ATTEMPTS MATCHES INCOMPLETE
+top.DUT.assertions.CREAD_ACT              0        0      102       9          0
+top.DUT.assertions.CREAD_CAS              0        0      102       6          0
+top.DUT.assertions.CREAD_NOP1             0        0      102       6          1
+top.DUT.assertions.CREAD_NOP2             0        0      102       6          0
+top.DUT.assertions.CREAD_NOP3             0        0      102       6          0
+top.DUT.assertions.CREAD_WRITE_ACT        0        0      102      17          1
+top.DUT.assertions.CRESET_IDLE            0        0      102       5          0
+top.DUT.assertions.CWRITE_ACT             0        0      102       8          0
+top.DUT.assertions.CWRITE_CAS             0        0      102       8          0
+top.DUT.assertions.CWRITE_NOP1            0        0      102       8          0
+top.DUT.assertions.CWRITE_NOP2            0        0      102       8          0
+top.DUT.assertions.CWRITE_NOP3            0        0      102       8          0
+
+
