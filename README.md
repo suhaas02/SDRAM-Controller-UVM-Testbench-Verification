@@ -1,6 +1,6 @@
 # SDRAM Controller + UVM Testbench
 
-A compact Verilog project implementing an SDRAM controller, a behavioral SDRAM model, and a UVM-based verification environment to validate read/write functionality.
+UVM Testbench environment developed for verifying write/read functionality of SDRAM controller and memory SDRAM model. SDRAM rtl taken from https://github.com/yigitbektasgursoy/SDRAM_Verilog/tree/main
 
 This folder contains RTL, UVM agents, sequences, and simulation artifacts used to exercise the controller and verify correct read-back behavior via a scoreboard.
 
