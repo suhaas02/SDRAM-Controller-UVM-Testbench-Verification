@@ -53,7 +53,7 @@ class src_monitor extends uvm_monitor;
             xtn = transaction::type_id::create("xtn");
             xtn.in_HWDATA = vif.in_HWDATA; 
             put_port.put(xtn); 
-            
+            cg.sample(); 
         end 
     endtask 
 
