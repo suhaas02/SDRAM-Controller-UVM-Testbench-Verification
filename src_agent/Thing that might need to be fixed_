@@ -1,3 +1,0 @@
-Thing that might need to be fixed: 
-a. If reset is asserted in between by processing any data, that data will be lost. This is because
-   hold_sdram_read_data is not assigned to 0 when reset is asserted.
