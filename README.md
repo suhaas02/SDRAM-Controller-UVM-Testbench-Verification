@@ -15,7 +15,7 @@ This folder contains RTL, UVM agents, sequences, and simulation artifacts used t
   - `tb/` — Testbench harness including `top.sv`, `environment.sv`, `scoreboard.sv`, `transaction.sv`, and config objects for `uvm_config_db` binding.
   - `test/` — `sdram_pkg.sv` and `test.sv` provide packaged tests (`write_only_test`, `write_read_test`) that drive sequences and verify data integrity via a scoreboard.
 
-**Repository layout (SDRAM folder)**
+**Repository layout **
 
 - `rtl/` — `sdram_controller.v`, `sdram_model.v`, `sdram_top.v`, `sdram_if.sv`, plus helpers.
 - `src_agent/` — source-side UVM agent (driver, monitor, sequencer, sequences).
