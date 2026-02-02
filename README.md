@@ -1,6 +1,6 @@
 # SDRAM Controller + UVM Testbench
 
-A compact Verilog/SystemVerilog project implementing an SDRAM controller, a behavioral SDRAM model, and a UVM-based verification environment to validate read/write functionality.
+A compact Verilog project implementing an SDRAM controller, a behavioral SDRAM model, and a UVM-based verification environment to validate read/write functionality.
 
 This folder contains RTL, UVM agents, sequences, and simulation artifacts used to exercise the controller and verify correct read-back behavior via a scoreboard.
 
@@ -29,7 +29,7 @@ This folder contains RTL, UVM agents, sequences, and simulation artifacts used t
 1. Open a terminal in this folder's `sim` directory:
 
 ```bash
-cd SDRAM/sim
+cd SDRAM-Controller-UVM-Testbench-Verification/sim
 ```
 
 2. Run the provided Makefile target (example observed in this workspace):
